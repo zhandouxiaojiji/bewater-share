@@ -1,14 +1,27 @@
-local skynet = require "skynet"
+local skynet = require "skynet.manager"
 local cluster   = require "skynet.cluster"
 local conf   = require "conf"
 local util   = require "util"
+
+local CMD = {}
+function CMD.stop()
+    skynet.call("autoid", "lua", "stop")
+    skynet.timeout(0, function()
+        skynet.abort()
+    end)
+end
 
 skynet.start(function()
     cluster.reload(conf.clustername)
     cluster.open(conf.cluster.name)
     skynet.register "svr"
+
+    skynet.dispatch("lua", function(_,_, cmd, ...)
+        local f = assert(CMD[cmd], ...)
+        util.ret(f(...))
+    end)
     
     local addr = skynet.newservice("autoid")
-    skynet.name(addr, "autoid")
     skynet.call(addr, "lua", "start")
+    --skynet.name("autoid", attr)
 end)

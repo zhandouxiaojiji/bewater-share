@@ -9,7 +9,7 @@ local id
 
 local CMD = {}
 function CMD.start()
-    local id = mongo.get("autoid", 10000000)
+    id = mongo.get("autoid", 10000000)
     reserve_id = id + RESERVE_COUNT
 end
 
@@ -33,4 +33,5 @@ skynet.start(function()
         local f = assert(CMD[cmd], cmd)
         util.ret(f(...))
     end)
+    skynet.register "autoid"
 end)
