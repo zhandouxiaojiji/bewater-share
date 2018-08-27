@@ -2,7 +2,7 @@ local skynet = require "skynet"
 local conf = {
     workspace = skynet.getenv('workspace'),
 
-    proj_name = "monitor",
+    proj = "monitor",
     webconsole = {
         host = "www.kaizhan8.com",
         port = 8701,

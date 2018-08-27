@@ -17,7 +17,7 @@ function CMD.stop()
     mongo.set("autoid", id)
 end
 
-function CMD.auto(count)
+function CMD.create(count)
     count = count or 1
     local start_id = id
     id = id + count
@@ -25,7 +25,7 @@ function CMD.auto(count)
         reserve_id = id + RESERVE_COUNT
         mongo.set("autoid", reserve_id)
     end
-    return start_id
+    return start_id, count
 end
 
 skynet.start(function()
