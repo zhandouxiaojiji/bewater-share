@@ -21,14 +21,10 @@ local conf = {
     whitelist = true,
 
     -- 通用节点
-    clustername = {
+    cluster = {
         stop    = "127.0.0.1:9999",
         monitor = "127.0.0.1:9998",
-    },
-    -- 本节点
-    cluster = {
-        name = "share",
-        addr = "127.0.0.1:9997",
+        share   = "127.0.0.1:9997",
     },
 
     alert = { 
@@ -41,7 +37,5 @@ local conf = {
 
     MAX_LOGINING = 10,
 }
-
-conf.clustername[conf.cluster.name] = conf.cluster.addr
 
 return conf

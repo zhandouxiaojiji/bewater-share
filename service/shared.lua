@@ -1,7 +1,8 @@
-local skynet = require "skynet.manager"
-local cluster   = require "skynet.cluster"
-local conf   = require "conf"
-local util   = require "util"
+local skynet        = require "skynet.manager"
+local cluster       = require "skynet.cluster"
+local clusterinfo   = require "clusterinfo"
+local conf          = require "conf"
+local util          = require "util"
 
 local CMD = {}
 function CMD.stop()
@@ -12,8 +13,8 @@ function CMD.stop()
 end
 
 skynet.start(function()
-    cluster.reload(conf.clustername)
-    cluster.open(conf.cluster.name)
+    cluster.reload(conf.cluster)
+    cluster.open(clusterinfo.clustername)
     skynet.register "svr"
 
     skynet.dispatch("lua", function(_,_, cmd, ...)

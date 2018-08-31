@@ -7,4 +7,4 @@ cd $workspace/../../skynet
 ./skynet ${workspace}/etc/shared.cfg
 
 cd $workspace/log
-tail -f shared.log
+tail -f share.log
