@@ -24,5 +24,7 @@ skynet.start(function()
     
     local addr = skynet.newservice("autoid")
     skynet.call(addr, "lua", "start")
-    --skynet.name("autoid", attr)
+
+    skynet.newservice("passport")
+
 end)
