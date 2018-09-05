@@ -2,6 +2,7 @@ local skynet = require "skynet.manager"
 local util   = require "util"
 local uuid   = require "uuid"
 
+local string_gsub = string.gsub
 local uid2passport = {}
 local passport2uid = {}
 
@@ -11,7 +12,7 @@ function CMD.create(uid)
     if passport then
         passport2uid[passport] = nil
     end
-    local passport = uuid()
+    local passport = string_gsub(uuid(), '-', '')
     uid2passport[uid] = passport
     passport2uid[passport] = uid
     return passport
