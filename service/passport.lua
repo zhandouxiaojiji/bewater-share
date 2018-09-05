@@ -12,7 +12,13 @@ function CMD.create(uid)
     if passport then
         passport2uid[passport] = nil
     end
-    local passport = string_gsub(uuid(), '-', '')
+    local passport
+    while true do
+        passport = string_gsub(uuid(), '-', '')
+        if not passport2uid[passport] then
+            break
+        end
+    end
     uid2passport[uid] = passport
     passport2uid[passport] = uid
     return passport
