@@ -105,13 +105,16 @@ function M:operate(uid, code, ...)
     -- 玩家在线
 	local params = table.pack(...)
     local player = self:get_player(uid)
+    if not player then
+        return false
+    end
     if player.agent then
-        util.try(function()
+        local ret = util.try(function()
             cluster.call(player.cname, player.agent, uid, "operate", "operate", code, table.unpack(params))
             player.time = os.time()
             self:save_player(uid)
         end)
-        return
+        return ret
     end
 
     -- 玩家离线
@@ -122,6 +125,7 @@ function M:operate(uid, code, ...)
 	}
 	table.insert(player.operate_list, operate)
     self:save_player(uid)
+    return true
 end
 
 skynet.start(function()
