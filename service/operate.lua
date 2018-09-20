@@ -14,7 +14,7 @@ function M:init()
 end
 
 function M:save_batch()
-    mongo.save("batch_operate", self.batch_list)
+    mongo.set("batch_operate", self.batch_list)
 end 
 
 function M:save_player(uid)
