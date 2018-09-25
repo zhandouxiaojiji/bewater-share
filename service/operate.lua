@@ -114,6 +114,10 @@ function M:operate(uid, code, ...)
             player.time = os.time()
             self:save_player(uid)
         end)
+        if not ret then
+            player.cname = nil
+            player.agent = nil
+        end
         return ret
     end
 
