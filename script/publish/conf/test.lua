@@ -20,7 +20,8 @@ conf.redis = {
     port = 19998,
 }
 conf.webconsole = {
-    host = "www.kaizhan8.com",
+    host = "game.kaizhan8.com",
     port = 8710,
 }
+conf.alert.enable = true
 return conf

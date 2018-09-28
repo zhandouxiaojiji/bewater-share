@@ -5,7 +5,6 @@ conf.remote_host = "zhong@dev.zhongfq.com"
 conf.remote_port = 22
 conf.remote_path = "/mnt/dev/home/zhong/server/share"
 conf.etcname = "shared"
-conf.webconsole.host = "dev.zhongfq.com"
 conf.clustername = "share"
 conf.cluster = {
     monitor = "127.0.0.1:19900",
@@ -24,4 +23,5 @@ conf.webconsole = {
     host = "dev.zhongfq.com",
     port = 9998,
 }
+conf.alert.enable = true
 return conf
