@@ -1,6 +1,6 @@
 local skynet        = require "skynet.manager"
 local cluster       = require "skynet.cluster"
-local clusterinfo   = require "clusterinfo"
+local clusterinfo   = require "util.clusterinfo"
 local conf          = require "conf"
 local util          = require "util"
 local log           = require "log"
