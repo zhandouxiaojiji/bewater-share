@@ -3,7 +3,7 @@ local conf = {
     workspace = skynet.getenv('workspace'),
 
     proj = "share",
-    desc = "数据共享中心(开发服)"
+    desc = "数据共享中心(开发服)",
     webconsole = {
         host = "www.kaizhan8.com",
         port = 8810,
