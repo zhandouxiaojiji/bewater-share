@@ -2,7 +2,8 @@ local skynet = require "skynet"
 local conf = {
     workspace = skynet.getenv('workspace'),
 
-    proj = "monitor",
+    proj = "share",
+    desc = "数据共享中心(开发服)"
     webconsole = {
         host = "www.kaizhan8.com",
         port = 8810,
@@ -25,9 +26,10 @@ local conf = {
         monitor = "127.0.0.1:19800",
         share   = "127.0.0.1:19801",
     },
+    clustername = skynet.getenv "clustername",
 
     alert = { 
-        --enable      = true,
+        enable      = true,
         corpid      = 'dingbf0f32a0c5a10f0735c2f4657eb6378f',
         corpsecret  = 'E-69ZUSz-6ZizoXNoOLc0HEdiJ6VZb1AXJ5mGPSgjxDVKeMQ2h6YQfhLvWDxGwa9',
         sender      = 'manager3375',

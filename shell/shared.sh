@@ -5,6 +5,3 @@ mkdir -p $workspace/log/pid/
 
 cd $workspace/../../skynet
 ./skynet ${workspace}/etc/shared.cfg
-
-cd $workspace/log
-tail -f share.log

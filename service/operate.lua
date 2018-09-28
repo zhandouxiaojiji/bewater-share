@@ -102,6 +102,7 @@ function M:broadcast_operate(id_list, code, ...)
 end
 
 function M:operate(uid, code, ...)
+    assert(type(uid) == "number" and type(code) == "number")
     -- 玩家在线
 	local params = table.pack(...)
     local player = self:get_player(uid)
