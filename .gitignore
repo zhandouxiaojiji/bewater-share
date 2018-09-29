@@ -1,4 +1,4 @@
 .tags
 .cscope.out
 log/*
-publish/nodename.lua
+nodename.lua
