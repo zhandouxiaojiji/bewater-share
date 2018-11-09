@@ -5,7 +5,7 @@ local conf = {
     proj = "share",
     desc = "数据共享中心(开发服)",
     webconsole = {
-        host = "www.kaizhan8.com",
+        host = "huangjx.top",
         port = 8810,
     },
 
