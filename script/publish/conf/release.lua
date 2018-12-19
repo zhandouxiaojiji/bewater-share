@@ -1,4 +1,4 @@
-local util = require "util"
+local util = require "bw.util"
 local conf = require "conf"
 conf = util.clone(conf)
 conf.desc = "共享数据中心"

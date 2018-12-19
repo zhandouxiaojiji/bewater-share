@@ -1,6 +1,6 @@
 local skynet = require "skynet.manager"
-local mongo = require "db.mongo_helper"
-local util = require "util"
+local mongo = require "bw.db.mongo_helper"
+local util = require "bw.util"
 
 local RESERVE_COUNT = 100
 

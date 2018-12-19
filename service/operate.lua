@@ -1,9 +1,9 @@
 local skynet    = require "skynet"
 local cluster   = require "skynet.cluster"
-local mongo     = require "db.mongo_helper"
-local util      = require "util"
+local mongo     = require "bw.db.mongo_helper"
+local util      = require "bw.util"
 local opcode    = require "def.opcode"
-local log       = require "log"
+local log       = require "bw.log"
 
 local trace = log.trace("operate")
 

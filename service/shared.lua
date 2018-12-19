@@ -1,9 +1,9 @@
 local skynet        = require "skynet.manager"
 local cluster       = require "skynet.cluster"
-local clusterinfo   = require "util.clusterinfo"
+local clusterinfo   = require "bw.util.clusterinfo"
 local conf          = require "conf"
-local util          = require "util"
-local log           = require "log"
+local util          = require "bw.util"
+local log           = require "bw.log"
 
 local CMD = {}
 function CMD.stop()

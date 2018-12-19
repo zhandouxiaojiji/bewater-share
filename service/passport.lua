@@ -1,6 +1,6 @@
 local skynet = require "skynet.manager"
-local util   = require "util"
-local uuid   = require "uuid"
+local util   = require "bw.util"
+local uuid   = require "bw.uuid"
 
 local string_gsub = string.gsub
 local uid2passport = {}
