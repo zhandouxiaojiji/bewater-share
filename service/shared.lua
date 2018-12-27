@@ -1,9 +1,11 @@
 local skynet        = require "skynet.manager"
 local cluster       = require "skynet.cluster"
 local clusterinfo   = require "bw.util.clusterinfo"
-local conf          = require "conf"
 local util          = require "bw.util"
 local log           = require "bw.log"
+local cms           = require "cms.cms"
+local conf          = require "conf"
+
 
 local CMD = {}
 function CMD.stop()
@@ -32,6 +34,8 @@ skynet.start(function()
     skynet.call(addr, "lua", "start")
     skynet.newservice("passport")
     skynet.newservice("operate")
+    
+    cms.init()
 
     log.sighup()
     skynet.dispatch("lua", function(_,_, cmd, ...)

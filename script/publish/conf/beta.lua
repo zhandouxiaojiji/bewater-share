@@ -1,7 +1,7 @@
 local util = require "bw.util"
 local conf = require "conf"
 conf = util.clone(conf)
-conf.desc = "share(测试服)",
+conf.desc = "share(测试服)"
 conf.remote_host = "www@kid-dev.xqw369.com"
 conf.remote_port = 22
 conf.remote_path = "/mnt/dev/server/share"
@@ -19,7 +19,11 @@ conf.mongo = {
 }
 conf.webconsole = {
     host = "kid-dev.xqw369.com",
-    port = 9998,
+    port = 9997,
+}
+conf.debug_console = {
+    host = "kid-dev.xqw369.com",
+    port = 9996,
 }
 conf.alert.enable = true
 return conf

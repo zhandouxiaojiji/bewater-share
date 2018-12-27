@@ -6,11 +6,11 @@ local conf = {
     desc = "数据共享中心(开发服)",
     webconsole = {
         host = "huangjx.top",
-        port = 9995,
+        port = 9997,
     },
     debug_console = {
         host = "huangjx.top",
-        port = 9994,
+        port = 9996,
     },
 
     mongo = {
