@@ -2,3 +2,4 @@
 .cscope.out
 log/*
 nodename.lua
+script/publish/conf/*
