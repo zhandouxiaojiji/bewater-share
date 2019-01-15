@@ -6,6 +6,7 @@ local log           = require "bw.log"
 local cms           = require "cms.cms"
 local conf          = require "conf"
 
+local trace = log.trace("shared")
 
 local CMD = {}
 function CMD.stop()
@@ -16,7 +17,8 @@ function CMD.stop()
 end
 
 function CMD.node_start(cname, caddr)
-    conf.cluster[cname] = caddr 
+    trace("node_start:%s, %s", cname, caddr)
+    conf.cluster[cname] = caddr
     cluster.reload(conf.cluster)
 end
 
@@ -29,12 +31,12 @@ skynet.start(function()
         local f = assert(CMD[cmd], ...)
         util.ret(f(...))
     end)
-    
+
     local addr = skynet.newservice("autoid")
     skynet.call(addr, "lua", "start")
     skynet.newservice("passport")
     skynet.newservice("operate")
-    
+
     cms.init()
 
     log.sighup()

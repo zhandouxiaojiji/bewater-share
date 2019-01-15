@@ -1,4 +1,3 @@
-local skynet    = require "skynet"
 local wc        = require "bw.cms.webconsole"
 local conf      = require "conf"
 
@@ -17,7 +16,7 @@ function M.init()
                 {title = "GM", icon = "&#xe64e;", href = "/cms/view/gm"},
             }},
         }
-    }) 
+    })
 end
 
 return M
